@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   def index
-    result = SessionCreator.call
+    result = IntentDetectionService.call
     
     @session_id = result.session_id
     @initial_message = result.response

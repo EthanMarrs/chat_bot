@@ -1,6 +1,6 @@
 require "google/cloud/dialogflow/v2/sessions"
 
-RSpec.describe SessionCreator do
+RSpec.describe IntentDetectionService do
   describe ".call" do
     let(:query_result) { double("Google::Cloud::Dialogflow::V2::QueryResult", fulfillment_text: "Success")}
     let(:detect_intent_response) { double("Google::Cloud::Dialogflow::V2::DetectIntentResponse", query_result: query_result ) }

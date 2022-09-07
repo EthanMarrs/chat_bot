@@ -1,7 +1,7 @@
-class SessionCreator
-  def initialize(message: "hello")
+class IntentDetectionService
+  def initialize(message: "hello", session_id: nil)
     @message = message
-    @session_id = generate_session_id
+    @session_id = session_id || generate_session_id
   end
 
   def call
@@ -13,8 +13,8 @@ class SessionCreator
     )
   end
 
-  def self.call(message: "Hello")
-    new(message: message).call
+  def self.call(message: "hello", session_id: nil)
+    new(message: message, session_id: session_id).call
   end
 
   private
