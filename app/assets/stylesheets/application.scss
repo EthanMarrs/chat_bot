@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ // Mixins
+@import "mixins/media";
+
+// Configuration
+@import "config/variables";
+@import "config/reset";
+
+// Components
+@import "components/button";
+@import "components/message";
+
+// Layouts
+@import "layouts/container";
+// @import "layouts/header";

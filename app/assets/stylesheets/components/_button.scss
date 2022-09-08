@@ -1,0 +1,13 @@
+.button {
+  border-radius: var(--border-radius-l);
+
+  &--white {
+    border: var(--border);
+    background-color: var(--color-white);
+
+  }
+
+  &--light {
+    background-color: var(--color-light);
+  }
+}

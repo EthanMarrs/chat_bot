@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "messages", class: "thread" %>
+
+<%= turbo_frame_tag "new_message", class: "new-message", src: new_messages_path(session_id: @session_id) %>

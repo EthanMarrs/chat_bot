@@ -1,7 +1,0 @@
-<h1>Conversation <%= @session_id %></h1>
-
-<%= turbo_frame_tag "messages" do %>
-  <p><%= @initial_message %></p>
-<% end %>
-
-<%= turbo_frame_tag "new_message", src: new_messages_path(session_id: @session_id) %>

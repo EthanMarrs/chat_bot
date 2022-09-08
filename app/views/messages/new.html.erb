@@ -1,9 +1,11 @@
 <%= turbo_frame_tag "new_message" do %>
-  <%= form_with(url: messages_path) do |form| %>
+  <%= form_with(url: messages_path, data: { controller: "form", action: "turbo:submit-start->form#reset" }) do |form| %>
+    <%= form.label "Send a message", class: "label" %>
+    <%= form.text_area :message, autofocus: true, data: { form_target: "message" }, class: "textarea" %>
+
     <%= form.hidden_field :session_id, value: @session_id %>
-    <%= form.label :message %>
-    <%= form.text_area :message %>
-    <%= form.submit :message %>
+
+    <%= form.submit "Send" %>
   <% end %>
 <% end %>
 
