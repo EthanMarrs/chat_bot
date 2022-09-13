@@ -23,9 +23,9 @@ module Chat
       new.detect_intent
     end
 
-    private
-
     attr_accessor :message, :session_id
+
+    private
 
     def client
       Google::Cloud::Dialogflow.sessions

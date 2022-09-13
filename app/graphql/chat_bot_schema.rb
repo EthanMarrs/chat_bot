@@ -16,9 +16,6 @@ class ChatBotSchema < GraphQL::Schema
 
   # Union and Interface Resolution
   def self.resolve_type(abstract_type, obj, ctx)
-    # TODO: Implement this method
-    # to return the correct GraphQL object type for `obj`
-
     case obj
     when Conversation
       Types::ConversationType
