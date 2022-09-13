@@ -17,7 +17,6 @@
   margin-right: auto;
 
   @include media(tabletAndUp) {
-    // padding-right: var(--space-xxxxl);
-    // padding-left: var(--space-xxxxl);
+    padding: var(--space-l) var(--space-xxxxl);
   }
 }

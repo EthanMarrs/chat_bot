@@ -30,9 +30,11 @@
   --space-xxxl: 3rem;    // 48px
   --space-xxxxl: 4rem;   // 64px
 
-  --border-radius-s: 0.25rem;
-  --border-radius-m: 0.375rem;
-  --border-radius-l: 0.5rem;
+  --border-radius-s: 0.75rem;   
+  --border-radius-m: 1rem;
+  --border-radius-l: 1.5rem;     
+  --border-radius-xl: 2rem;      
+  --border-radius-xxl: 2.5rem;   
 
   --border: solid 1px var(--color-light);
 }

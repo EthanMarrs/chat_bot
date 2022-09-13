@@ -1,4 +1,8 @@
 .textarea {
   width: 100%;
   height: 50px;
+  border-radius: var(--border-radius-l);
+  resize: none;
+  padding: var(--space-s) var(--space-l);
+  font-weight: var(--font-weight-regular);
 }
