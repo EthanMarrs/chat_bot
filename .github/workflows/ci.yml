@@ -16,10 +16,8 @@ jobs:
         image: postgres:14.5
         ports:
           - "5432:5432"
-        env:
-          POSTGRES_DB: chat_bot_test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: ""
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://postgres@localhost:5432/chat_bot_test"
