@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  if Rails.env.development?
+    mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
+  end
 
-  root "conversations#show"
-
-  resource :messages, only: [:new, :show, :create]
+  post "/graphql", to: "graphql#execute"
 end

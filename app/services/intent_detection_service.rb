@@ -21,7 +21,7 @@ class IntentDetectionService
 
   attr_accessor :message, :session_id
 
-  def client 
+  def client
     Google::Cloud::Dialogflow.sessions
   end
 
