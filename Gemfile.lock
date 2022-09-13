@@ -273,6 +273,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     signet (0.17.0)
       addressable (~> 2.8)
       faraday (>= 0.17.5, < 3.a)
@@ -330,6 +332,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rspec-rails (~> 6.0.0.rc1)
   sassc-rails
+  shoulda-matchers (~> 5.0)
   sprockets-rails
   standard (~> 1.9.0)
   stimulus-rails
