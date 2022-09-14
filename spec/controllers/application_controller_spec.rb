@@ -7,8 +7,6 @@ RSpec.describe ApplicationController, type: :controller do
 
   describe "handling requests" do
     context "when the request originates from an allowed domain" do
-      before { @request.host = "localhost" }
-
       it "renders success response" do
         get :index
 
