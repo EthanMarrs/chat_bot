@@ -3,19 +3,19 @@ class Mutations::SendMessage < Mutations::BaseMutation
   argument :conversation_id, ID, loads: Types::ConversationType
   argument :text, String
 
-  field :message, Types::MessageType
+  field :conversation, Types::ConversationType
   field :errors, [String], null: false
 
   def resolve(args)
-    message = SendMessageService.call(conversation: args[:conversation], message: args[:text])
+    SendMessageService.call(conversation: args[:conversation], message: args[:text])
 
     {
-      message: message,
+      conversation: args[:conversation],
       errors: []
     }
   rescue ActiveRecord::RecordInvalid
     {
-      message: nil,
+      conversation: nil,
       errors: message.errors.full_messages
     }
   end

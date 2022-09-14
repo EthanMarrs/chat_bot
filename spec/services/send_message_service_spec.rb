@@ -26,5 +26,11 @@ RSpec.describe SendMessageService do
 
       expect(conversation.messages.last.text).to eq("Response")
     end
+
+    it "returns the message" do
+      result = described_class.call(conversation: conversation, message: "Example")
+
+      expect(result).to be_instance_of(Message)
+    end
   end
 end

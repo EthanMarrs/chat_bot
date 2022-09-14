@@ -5,8 +5,10 @@ RSpec.describe "Mutations::SendMessage" do
     <<-GRAPHQL
       mutation sendMessage($sendMessageInput: SendMessageInput!) {
         sendMessage(input: $sendMessageInput) {
-            message {
-              text
+            conversation {
+              messages {
+                text
+              }
             }
         }
       }
@@ -14,7 +16,7 @@ RSpec.describe "Mutations::SendMessage" do
   end
 
   it "returns the data" do
-    chat_result = double("Chat::Result", fulfillment_text: "Response!", session_id: "123")
+    chat_result = double("Chat::Result", fulfillment_text: "I have an answer", session_id: "123")
 
     expect(Chat::Bot).to receive(:detect_intent).and_return(chat_result)
 
@@ -24,9 +26,17 @@ RSpec.describe "Mutations::SendMessage" do
 
     expected_result = {
       send_message: {
-        message: {
-          text: "Response!"
+        conversation: {
+          messages: [
+            {
+              text: "I have a question"
+            },
+            {
+              text: "I have an answer"
+            }
+          ]
         }
+
       }
     }
 
