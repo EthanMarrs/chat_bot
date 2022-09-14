@@ -32,7 +32,7 @@ class ChatBotSchema < GraphQL::Schema
   # Relay-style Object Identification:
 
   # Return a string UUID for `object`
-  def self.id_from_object(object, type_definition, query_ctx = nil)
+  def self.id_from_object(object, type_definition = nil, query_ctx = nil)
     # For example, use Rails' GlobalID library (https://github.com/rails/globalid):
     object.to_gid_param
   end
