@@ -91,8 +91,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.hosts = [
-    ".ethanmarrs.dev",
-    "chat-bot-zvo9.onrender.com"
-  ]
+  config.hosts = Rails.application.credentials.hosts
 end
