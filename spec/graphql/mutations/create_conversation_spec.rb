@@ -5,7 +5,6 @@ RSpec.describe "Mutations::CreateConversation" do
         createConversation(input: {}) {
           conversation {
             id
-            sessionId
             messages {
               text
             }
@@ -27,7 +26,6 @@ RSpec.describe "Mutations::CreateConversation" do
       create_conversation: {
         conversation: {
           id: anything,
-          session_id: "123",
           messages: [
             {
               text: "Testing"
